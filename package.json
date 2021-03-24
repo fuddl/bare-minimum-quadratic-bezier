@@ -1,0 +1,20 @@
+{
+  "name": "bare-minimum-text-marker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.jsx",
+  "scripts": {
+    "build": "microbundle build --jsx React.createElement --format modern,cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "microbundle": "^0.13.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

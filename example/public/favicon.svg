@@ -1,0 +1,62 @@
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1000 2000">
+    <style>
+      text {
+        font-family: sans-serif;
+        stroke: black;
+        stroke-width: 5px;
+        paint-order: markers stroke fill;
+      }
+    </style>
+    <rect width="100%" height="100%" fill="black" opacity="black"></rect>
+    <path d=" M 648.460273452061,1085.3200002412575 L 479.4329802060464,1026.623486634017  M 479.4329802060464,1026.623486634017 L 339.79543468571285,1114.8784997734037  M 339.79543468571285,1114.8784997734037 L 532.9584204592353,1216.379883263018  M 532.9584204592353,1216.379883263018 L 648.460273452061,1085.3200002412575  M 476.374162012315,844.8907443216449 L 307.96611492754215,889.6382800614849  M 307.96611492754215,889.6382800614849 L 541.5864924223972,946.1673379879359  M 541.5864924223972,946.1673379879359 L 675.4015583614491,874.2241343562797  M 675.4015583614491,874.2241343562797 L 476.374162012315,844.8907443216449  M 479.4329802060464,1026.623486634017 L 476.374162012315,844.8907443216449  M 648.460273452061,1085.3200002412575 L 675.4015583614491,874.2241343562797  M 339.79543468571285,1114.8784997734037 L 307.96611492754215,889.6382800614849  M 532.9584204592353,1216.379883263018 L 541.5864924223972,946.1673379879359 " stroke="#607D8B" stroke-width="1" opacity="1" id="scene-edges-cube-box"></path>
+    <g id="Sol-0">
+        <circle opacity="1" cx="500" cy="1026.466692582155" r="2" fill="white"></circle><text x="500" y="1026.466692582155" fill="white" opacity="1">
+            <tspan dx="6" dy="5">Sol</tspan>
+        </text>
+    </g>
+    <g id="Alpha Centauri-0">
+        <circle opacity="1" cx="496.3311555087319" cy="1014.7657320802522" r="2" fill="white"></circle><text x="496.3311555087319" y="1014.7657320802522" fill="white" opacity="0">
+            <tspan dx="6" dy="5">Alpha Centauri</tspan>
+        </text>
+    </g>
+    <g id="40 Eridani-0">
+        <circle opacity="1" cx="429.22905095759324" cy="989.6553208979451" r="2" fill="white"></circle><text x="429.22905095759324" y="989.6553208979451" fill="white" opacity="1">
+            <tspan dx="6" dy="5">40 Eridani</tspan>
+        </text>
+    </g>
+    <g id="Procyon-0">
+        <circle opacity="1" cx="437.4341452496756" cy="1051.1005645755517" r="2" fill="white"></circle><text x="437.4341452496756" y="1051.1005645755517" fill="white" opacity="1">
+            <tspan dx="6" dy="5">Procyon</tspan>
+        </text>
+    </g>
+    <g id="61 Cygni-0">
+        <circle opacity="1" cx="561.7827351550781" cy="1035.6364702680835" r="2" fill="white"></circle><text x="561.7827351550781" y="1035.6364702680835" fill="white" opacity="1">
+            <tspan dx="6" dy="5">61 Cygni</tspan>
+        </text>
+    </g>
+    <g id="Tau Ceti-0">
+        <circle opacity="1" cx="489.67485124403214" cy="971.2910294978423" r="2" fill="white"></circle><text x="489.67485124403214" y="971.2910294978423" fill="white" opacity="1">
+            <tspan dx="6" dy="5">Tau Ceti</tspan>
+        </text>
+    </g>
+    <g id="Eta Cassiopeiae-0">
+        <circle opacity="1" cx="549.1140986657402" cy="1074.1012323083569" r="2" fill="white"></circle><text x="549.1140986657402" y="1074.1012323083569" fill="white" opacity="1">
+            <tspan dx="6" dy="5">Eta Cassiopeiae</tspan>
+        </text>
+    </g>
+    <g id="36 Ophiuchi-0">
+        <circle opacity="1" cx="555.049900817625" cy="998.7201206217669" r="2" fill="white"></circle><text x="555.049900817625" y="998.7201206217669" fill="white" opacity="1">
+            <tspan dx="6" dy="5">36 Ophiuchi</tspan>
+        </text>
+    </g>
+    <g id="Luyten's Star-0">
+        <circle opacity="1" cx="431.5916668991191" cy="1051.2748981489533" r="2" fill="white"></circle><text x="431.5916668991191" y="1051.2748981489533" fill="white" opacity="0">
+            <tspan dx="6" dy="5">Luyten's Star</tspan>
+        </text>
+    </g>
+    <g id="Sigma Draconis-0">
+        <circle opacity="1" cx="576.2017293842788" cy="1104.6101156639031" r="2" fill="white"></circle><text x="576.2017293842788" y="1104.6101156639031" fill="white" opacity="1">
+            <tspan dx="6" dy="5">Sigma Draconis</tspan>
+        </text>
+    </g>
+</svg>

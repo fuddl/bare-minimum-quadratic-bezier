@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+text {
+  font-family: sans-serif;
+  stroke: black;
+  stroke-width: 5px;
+  paint-order: markers stroke fill;
+}

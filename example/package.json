@@ -1,0 +1,29 @@
+{
+  "name": "bare-minimum-text-marker-example",
+  "homepage": ".",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "@juggle/resize-observer": "^3.2.0",
+    "@mithi/bare-minimum-3d": "^0.1.4",
+    "bare-minimum-2d": "^0.3.0",
+    "bare-minimum-text-marker": "file:..",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
