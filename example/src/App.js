@@ -4,8 +4,6 @@ import renderScene from '@mithi/bare-minimum-3d'
 import catalog from './catalog.json'
 import textMarker from 'bare-minimum-text-marker'
 
-console.debug(textMarker)
-
 const sceneSettings = {
   cubeRange: 20,
   cubeZoffset: 0,
