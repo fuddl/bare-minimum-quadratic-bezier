@@ -79,6 +79,12 @@ Default value: `1`
 
 Note that you'll still be able to apply css.
 
+## How to build the example
+
+```
+npm install && npm run build && cd example && npm install && npm run start
+```
+
 [font-family]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-family
 [fill]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill
 [font-size]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size
