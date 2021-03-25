@@ -73,11 +73,10 @@ function App() {
       ...data[0],
       label: star.name,
       id: star.name,
+      pointer: star.symbol ? star.symbol : null,
       type: 'textMarker',
-      size: 1,
       opacity: 1,
       color: 'white',
-      size: 2,
     })
   }
 
@@ -91,7 +90,7 @@ function App() {
         }
       }}
       onMouseMove={(e) => {
-        setRotateY(e.clientX/3)
+        setRotateY(-e.clientX/3)
         setRotateX(e.clientY/3)
       }}
     >

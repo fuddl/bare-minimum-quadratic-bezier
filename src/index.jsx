@@ -1,71 +1,94 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 
-const TextMarker = ({ x, y, transforms, size, color, opacity, id, i, label }) => {
+const collides = (first, second) => {
+  return first.x < second.x + second.width &&
+         first.x + first.width > second.x &&
+         first.y < second.y + second.height &&
+         first.y + first.height > second.y
+}
+
+const TextMarker = ({
+    x,
+    y,
+    color,
+    i,
+    id,
+    label,
+    opacity,
+    pointer,
+    size,
+    transforms,
+  }) => {
   const labelRef = useRef()
-  const opacity ||= 1
+  opacity ||= 1
+  size ||= 16
+  pointer ||= '•'
 
   const [ visible, setVisible ] = useState(false)
 
   useEffect(() => {
     const allTexts = document.querySelectorAll('text')
-    let rect1 = labelRef.current.getBBox()
+    let thisBox = labelRef.current.getBBox()
     for(let text of allTexts) {
       if (labelRef.current === text) {
         setVisible(true)
         return
       }
-      let rect2 = text.getBBox()
+      let otherBox = text.getBBox()
       let opacity = text.getAttribute('opacity')
-      if (opacity != 0 && rect1.x < rect2.x + rect2.width &&
-         rect1.x + rect1.width > rect2.x &&
-         rect1.y < rect2.y + rect2.height &&
-         rect1.y + rect1.height > rect2.y) {
+      if (opacity != 0 && collides(thisBox, otherBox)) {
         setVisible(false)
         return
       }
     }
     setVisible(true)
-  }, [x,y]);
+  }, [x,y])
+
+  const tx = transforms.tx(x)
+  const ty = transforms.ty(y)
 
   return (
-    <g id={`${id}-${i}`}>
-      <circle
-        {...{
-          opacity,
-          cx: transforms.tx(x),
-          cy: transforms.ty(y),
-          r: size,
-          fill: color
-        }}
-      />
-      <text ref={labelRef} x={transforms.tx(x)} y={transforms.ty(y)} fill={color} opacity={visible ? opacity : 0}>
-        <tspan dx={6} dy={5}>{label}</tspan>
-      </text>
-    </g>
+    <text
+      ref={labelRef}
+      x={tx}
+      y={ty}
+      fill={color}
+      fontSize={size}
+      id={`${id}-${i}`}
+    >
+      <tspan dx={-size/4} dy={size/2}>{pointer}</tspan>
+      {' '}
+      <tspan
+        fillOpacity={visible ? opacity : 0}
+        strokeOpacity={visible ? opacity : 0}
+      >
+        {label}
+      </tspan>
+    </text>
   )
 }
 
 const textMarkerPlugin = {
   textMarker: (element, transforms) => {
-    const { size, color, opacity, id, label } = element
+    const { size, color, opacity, id, label, pointer } = element
     return element.x.map((x, i) => (
       <TextMarker
         {...{
           x,
           y: element.y[i],
-          size,
+          transforms,
           color,
-          opacity,
+          i,
           id,
           label,
-          i,
-          transforms
+          opacity,
+          pointer,
+          size,
         }}
         key={`${id}-${i}`}
       />
     ))
   }
 }
-
 
 export default textMarkerPlugin

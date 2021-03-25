@@ -6,6 +6,6 @@ body {
 text {
   font-family: sans-serif;
   stroke: black;
-  stroke-width: 5px;
+  stroke-width: 2px;
   paint-order: markers stroke fill;
 }
