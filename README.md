@@ -34,3 +34,51 @@ function Space() {
 }
 
 ```
+
+## Options
+
+The following options can be used for a single point.
+
+### label 
+
+The text marker's text.
+
+Default value: (empty sting)
+
+### pointer
+
+Symbol used as a marker, that marks the position of the point. Make sure the 
+character is available in your font.
+
+Default value: `•`
+
+### fontFamily
+
+`[font-family]` of both the pointer and the label 
+
+Default value: (empty sting) – user agent decides
+
+### Color 
+
+`[fill]` color of both the pointer and the label 
+
+Default value: (empty string) – rendered as black
+
+### size
+
+[font-size] of both the pointer and the label 
+
+Default value: `16`
+
+### opacity
+
+Opacity of both the pointer and the label. Will be set to `0` for the marker
+text if space is already occupited by another text.
+
+Default value: `1`
+
+Note that you'll still be able to apply css.
+
+[font-family]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-family
+[fill]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill
+[font-size]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size

@@ -11,6 +11,7 @@ const TextMarker = ({
     x,
     y,
     color,
+    fontFamily,
     i,
     id,
     label,
@@ -54,6 +55,7 @@ const TextMarker = ({
       y={ty}
       fill={color}
       fontSize={size}
+      fontFamily={fontFamily}
       id={`${id}-${i}`}
     >
       <tspan dx={-size/4} dy={size/2}>{pointer}</tspan>
@@ -70,20 +72,29 @@ const TextMarker = ({
 
 const textMarkerPlugin = {
   textMarker: (element, transforms) => {
-    const { size, color, opacity, id, label, pointer } = element
+    const {
+      size,
+      color,
+      opacity,
+      id,
+      label,
+      pointer,
+      fontFamily,
+    } = element
     return element.x.map((x, i) => (
       <TextMarker
         {...{
           x,
           y: element.y[i],
-          transforms,
           color,
+          fontFamily,
           i,
           id,
           label,
           opacity,
           pointer,
           size,
+          transforms,
         }}
         key={`${id}-${i}`}
       />
