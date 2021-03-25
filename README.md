@@ -54,13 +54,13 @@ Default value: `•`
 
 ### fontFamily
 
-`[font-family]` of both the pointer and the label 
+[font-family] of both the pointer and the label 
 
 Default value: (empty sting) – user agent decides
 
 ### Color 
 
-`[fill]` color of both the pointer and the label 
+[fill] color of both the pointer and the label 
 
 Default value: (empty string) – rendered as black
 
