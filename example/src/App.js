@@ -99,6 +99,41 @@ function App() {
         setRotateX(e.clientY/3)
       }}
     >
+      <div class="intro">
+        <p>
+          This is a demo application for the 
+          {' '}
+          <a href="https://www.npmjs.com/package/bare-minimum-text-marker">bare-minimum-text-marker</a>
+          {' '}
+          plugin for 
+          {' '}
+          <a href="https://github.com/mithi/bare-minimum-2d">
+            bare-minimum-2d
+          </a>
+          {' '}
+          and 
+          {' '}
+          <a href="https://github.com/mithi/bare-minimum-3d">
+            3d
+          </a>
+          {' '}
+          library.
+        </p>
+        <p>
+          It allows you to place a text next to a point. The library
+          makes sure that text does not overlap other text. 
+        </p> 
+        <p>
+          This demo shows the stellar neigborhood of the sun (☉). 
+        </p> 
+        <p>
+          Data extracted from 
+          {' '}
+          <a href="https://www.wikidata.org/">wikidata</a>
+          {' '}
+          <small>(<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 License</a>)</small>
+        </p> 
+      </div>
       <BareMinimum2d
         container={{
           color: 'black',

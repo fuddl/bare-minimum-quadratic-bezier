@@ -1,11 +1,26 @@
 body {
   margin: 0;
   overflow: hidden;
+  color: white;
+  font-family: sans-serif;
 }
 
 text {
-  font-family: sans-serif;
+  font-family: inherit;
   stroke: black;
   stroke-width: 2px;
   paint-order: markers stroke fill;
+}
+
+a {
+	color: #607D8B;
+}
+
+.intro {
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 1em;
+	max-width: 33vw;
+	text-shadow: 0 0 .25em black;
 }
