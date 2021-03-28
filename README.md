@@ -52,13 +52,26 @@ character is available in your font.
 
 Default value: `•`
 
+### yOffset
+
+Vertical offset of the pointer to the datapoint. You might like to adjust that 
+to your `fontFamily` and `Pointer`.
+
+Default value: `[size](#size)/3`
+
+### gap
+
+Distance between the center of the pointer and the start of the label.
+
+Default value: `[size](#size)/2`
+
 ### fontFamily
 
 [font-family] of both the pointer and the label 
 
 Default value: (empty sting) – user agent decides
 
-### Color 
+### color 
 
 [fill] color of both the pointer and the label 
 
@@ -66,7 +79,7 @@ Default value: (empty string) – rendered as black
 
 ### size
 
-[font-size] of both the pointer and the label 
+[font-size] of both the pointer and the label.
 
 Default value: `16`
 
