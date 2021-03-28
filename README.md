@@ -57,13 +57,13 @@ Default value: `•`
 Vertical offset of the pointer to the datapoint. You might like to adjust that 
 to your `fontFamily` and `Pointer`.
 
-Default value: `[size](#size)/3`
+Default value: [`size`](#size)÷3
 
 ### gap
 
 Distance between the center of the pointer and the start of the label.
 
-Default value: `[size](#size)/2`
+Default value: [`size`](#size)÷2
 
 ### fontFamily
 
