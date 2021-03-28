@@ -69,6 +69,8 @@ function App() {
       }],
     )
 
+    const labelSize = 16
+
     points.push({
       ...data[0],
       label: star.name,
@@ -76,8 +78,11 @@ function App() {
       pointer: star.symbol ? star.symbol : null,
       type: 'textMarker',
       opacity: 1,
+      size: labelSize, 
+      yOffset: star.symbol !== '☉' ? labelSize/2.8 : labelSize/4, 
       color: 'white',
     })
+
   }
 
   return (

@@ -12,6 +12,7 @@ const TextMarker = ({
     y,
     color,
     fontFamily,
+    gap,
     i,
     id,
     label,
@@ -19,16 +20,19 @@ const TextMarker = ({
     pointer,
     size,
     transforms,
+    yOffset,
   }) => {
   const labelRef = useRef()
   opacity ||= 1
   size ||= 16
   pointer ||= '•'
+  gap ||= size/2
+  yOffset ||= size/3
 
   const [ visible, setVisible ] = useState(false)
 
   useEffect(() => {
-    const allTexts = document.querySelectorAll('text')
+    const allTexts = document.querySelectorAll('text:last-child')
     let thisBox = labelRef.current.getBBox()
     for(let text of allTexts) {
       if (labelRef.current === text) {
@@ -46,27 +50,34 @@ const TextMarker = ({
   }, [x,y])
 
   const tx = transforms.tx(x)
-  const ty = transforms.ty(y)
+  const ty = transforms.ty(y)+yOffset
 
   return (
-    <text
-      ref={labelRef}
-      x={tx}
-      y={ty}
+    <g
       fill={color}
       fontSize={size}
       fontFamily={fontFamily}
       id={`${id}-${i}`}
     >
-      <tspan dx={-size/4} dy={size/2}>{pointer}</tspan>
-      {' '}
-      <tspan
-        fillOpacity={visible ? opacity : 0}
-        strokeOpacity={visible ? opacity : 0}
+      <text
+        x={tx}
+        y={ty}
+        textAnchor="middle"
+        data-text-marker-pointer={true}
+      >
+        {pointer}
+      </text>
+      <text
+        x={tx + gap}
+        y={ty}
+        ref={labelRef}
+        opacity={visible ? opacity : 0}
+        textAnchor="left"
+        data-text-marker-label={true}
       >
         {label}
-      </tspan>
-    </text>
+      </text>
+    </g>
   )
 }
 
@@ -80,6 +91,7 @@ const textMarkerPlugin = {
       label,
       pointer,
       fontFamily,
+      yOffset,
     } = element
     return element.x.map((x, i) => (
       <TextMarker
@@ -95,6 +107,7 @@ const textMarkerPlugin = {
           pointer,
           size,
           transforms,
+          yOffset,
         }}
         key={`${id}-${i}`}
       />
