@@ -101,11 +101,11 @@ function App() {
     >
       <div class="intro">
         <p>
-          This is a demo application for the 
+          This is a demo application of the 
           {' '}
           <a href="https://www.npmjs.com/package/bare-minimum-text-marker">bare-minimum-text-marker</a>
           {' '}
-          plugin for 
+          plugin for
           {' '}
           <a href="https://github.com/mithi/bare-minimum-2d">
             bare-minimum-2d
@@ -124,7 +124,7 @@ function App() {
           makes sure that text does not overlap other text. 
         </p> 
         <p>
-          This demo shows the stellar neigborhood of the sun (☉). 
+          This demo visualises the stellar neigborhood of the sun (☉). 
         </p> 
         <p>
           Data extracted from 
