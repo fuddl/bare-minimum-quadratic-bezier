@@ -32,7 +32,7 @@ const TextMarker = ({
   const [ visible, setVisible ] = useState(false)
 
   useEffect(() => {
-    const allTexts = document.querySelectorAll('text:last-child')
+    const allTexts = labelRef.current.viewportElement.querySelectorAll('text:last-child')
     let thisBox = labelRef.current.getBBox()
     for(let text of allTexts) {
       if (labelRef.current === text) {

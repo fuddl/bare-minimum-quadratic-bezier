@@ -116,12 +116,11 @@ function App() {
           <a href="https://github.com/mithi/bare-minimum-3d">
             3d
           </a>
-          {' '}
-          library.
+          .
         </p>
         <p>
-          It allows you to place a text next to a point. The library
-          makes sure that text does not overlap other text. 
+          It allows you to place a text next to a point. The component
+          makes sure that text does not overlap. 
         </p> 
         <p>
           This demo visualises the stellar neigborhood of the sun (☉). 
