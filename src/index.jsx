@@ -31,8 +31,8 @@ const TextMarker = ({
 
   const [ visible, setVisible ] = useState(false)
 
-  useEffect(() => {
-    const allTexts = labelRef.current.viewportElement.querySelectorAll('text:last-child')
+  const checkOverlab = () => {
+    const allTexts = labelRef.current.viewportElement.querySelectorAll('[data-text-marker-label]')
     let thisBox = labelRef.current.getBBox()
     for(let text of allTexts) {
       if (labelRef.current === text) {
@@ -40,13 +40,16 @@ const TextMarker = ({
         return
       }
       let otherBox = text.getBBox()
-      let opacity = text.getAttribute('opacity')
-      if (opacity != 0 && collides(thisBox, otherBox)) {
+      if (collides(thisBox, otherBox)) {
         setVisible(false)
         return
       }
     }
     setVisible(true)
+  }
+
+  useEffect(() => {
+    checkOverlab()
   }, [x,y])
 
   const tx = transforms.tx(x)

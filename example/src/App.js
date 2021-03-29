@@ -99,7 +99,7 @@ function App() {
         setRotateX(e.clientY/3)
       }}
     >
-      <div class="intro">
+      <div className="intro">
         <p>
           This is a demo application of the 
           {' '}
