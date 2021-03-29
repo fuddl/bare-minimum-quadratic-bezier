@@ -21,6 +21,7 @@ const TextMarker = ({
     size,
     transforms,
     yOffset,
+    layout,
   }) => {
   const labelRef = useRef()
   opacity ||= 1
@@ -28,6 +29,7 @@ const TextMarker = ({
   pointer ||= '•'
   gap ||= size/2
   yOffset ||= size/3
+  layout ||= 'east'
 
   const [ visible, setVisible ] = useState(false)
 
@@ -55,6 +57,19 @@ const TextMarker = ({
   const tx = transforms.tx(x)
   const ty = transforms.ty(y)+yOffset
 
+  let labelX, labelAnchor
+
+  switch (layout) {
+    case 'east':
+      labelX = tx + gap
+      labelAnchor = 'start'
+      break;
+    case 'west':
+      labelX = tx - gap
+      labelAnchor = 'end'
+      break;
+  }
+
   return (
     <g
       fill={color}
@@ -71,11 +86,11 @@ const TextMarker = ({
         {pointer}
       </text>
       <text
-        x={tx + gap}
+        x={labelX}
         y={ty}
         ref={labelRef}
         opacity={visible ? opacity : 0}
-        textAnchor="left"
+        textAnchor={labelAnchor}
         data-text-marker-label={true}
       >
         {label}
@@ -95,6 +110,7 @@ const textMarkerPlugin = {
       pointer,
       fontFamily,
       yOffset,
+      layout,
     } = element
     return element.x.map((x, i) => (
       <TextMarker
@@ -111,6 +127,7 @@ const textMarkerPlugin = {
           size,
           transforms,
           yOffset,
+          layout,
         }}
         key={`${id}-${i}`}
       />

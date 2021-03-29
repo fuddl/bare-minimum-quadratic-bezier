@@ -81,6 +81,7 @@ function App() {
       size: labelSize, 
       yOffset: star.symbol !== '☉' ? labelSize/2.8 : labelSize/4, 
       color: 'white',
+      layout: data[0].x > 0 ? 'east' : 'west',
     })
 
   }
