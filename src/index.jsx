@@ -146,7 +146,7 @@ const textMarkerPlugin = {
       pointer,
       fontFamily,
       yOffset,
-      layout,
+      layouts,
     } = element
     return element.x.map((x, i) => (
       <TextMarker
@@ -163,7 +163,7 @@ const textMarkerPlugin = {
           size,
           transforms,
           yOffset,
-          layout,
+          layouts,
         }}
         key={`${id}-${i}`}
       />

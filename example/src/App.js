@@ -70,6 +70,17 @@ function App() {
     )
 
     const labelSize = 16
+    
+    let layouts = []
+    if (star.symbol === '☉') {
+      layouts = ['south']
+    } else {
+      if (data[0].x > 0) {
+        layouts = ['east', 'north', 'south', 'west']
+      } else {
+        layouts = ['west', 'south', 'north', 'east']
+      }
+    }
 
     points.push({
       ...data[0],
@@ -81,7 +92,7 @@ function App() {
       size: labelSize, 
       yOffset: star.symbol !== '☉' ? labelSize/2.8 : labelSize/4, 
       color: 'white',
-      layouts: data[0].x > 0 ? ['east', 'north', 'south', 'west'] : ['west', 'south', 'north', 'east'],
+      layouts: layouts,
     })
   }
 
