@@ -7,6 +7,7 @@ const collides = (first, second) => {
          first.y + first.height > second.y
 }
 
+
 const TextMarker = ({
     x,
     y,
@@ -21,33 +22,64 @@ const TextMarker = ({
     size,
     transforms,
     yOffset,
-    layout,
+    layouts,
   }) => {
-  const labelRef = useRef()
   opacity ||= 1
   size ||= 16
   pointer ||= '•'
   gap ||= size/2
   yOffset ||= size/3
-  layout ||= 'east'
+  layouts ||= ['east', 'west', 'south', 'north']
+  const domId = `${id}-${i}`
+
+  const markerRef = useRef()
+
+  let refs = {}
+  for (let layout of layouts) {
+    refs[layout] = useRef()
+  }
+
+  const debuger = (expr) => {
+    if (domId === "Luyten's Star-0") {
+      //console.debug(expr)
+    }
+  }
 
   const [ visible, setVisible ] = useState(false)
 
   const checkOverlab = () => {
-    const allTexts = labelRef.current.viewportElement.querySelectorAll('[data-text-marker-label]')
-    let thisBox = labelRef.current.getBBox()
-    for(let text of allTexts) {
-      if (labelRef.current === text) {
-        setVisible(true)
-        return
+    const allTexts = markerRef.current.viewportElement.querySelectorAll(`[data-layout] > [data-text-marker-label]:not([opacity="0"])`)
+    debuger('checking overlab --------------------------------')
+    for (let layout of layouts) {
+      debuger('tring layout ' + layout)
+      let noCollision = true
+      let thisBox = refs[layout].current.getBBox()
+      for(let text of allTexts) {
+        if (noCollision && text.parentNode.getAttribute('id') === domId) {
+          // if we get to this point, it means there was no collision above 
+          // so we can set the current layout to visible.
+          setVisible(layout)
+          debuger('found myself')
+          return
+        }
+        let otherBox = text.getBBox()
+        debuger('other id ' + text.parentNode.getAttribute('id'))
+        if (collides(thisBox, otherBox) && text.parentNode.getAttribute('id') !== domId) {
+          debuger('collision detected with ' + text.parentNode.getAttribute('id'))
+          debuger(refs[layout].current)
+          debuger(text)
+          noCollision = false
+        }
       }
-      let otherBox = text.getBBox()
-      if (collides(thisBox, otherBox)) {
-        setVisible(false)
+      if (noCollision) {
+        debuger('no collision detected')
+        debuger('enabling layout ' + layout)
+        setVisible(layout)
         return
       }
     }
-    setVisible(true)
+    debuger('no layout suitable')
+    setVisible(false)
   }
 
   useEffect(() => {
@@ -59,15 +91,27 @@ const TextMarker = ({
 
   let labelX, labelAnchor
 
-  switch (layout) {
-    case 'east':
-      labelX = tx + gap
-      labelAnchor = 'start'
-      break;
-    case 'west':
-      labelX = tx - gap
-      labelAnchor = 'end'
-      break;
+  const metrics = {
+    east: {
+      x: tx + gap,
+      y: ty,
+      anchor: 'start',
+    },
+    west: {
+      x: tx - gap,
+      y: ty,
+      anchor: 'end',
+    },
+    north: {
+      x: tx,
+      y: ty - gap,
+      anchor: 'middle',
+    },
+    south: {
+      x: tx,
+      y: ty + gap,
+      anchor: 'middle',
+    },
   }
 
   return (
@@ -75,7 +119,9 @@ const TextMarker = ({
       fill={color}
       fontSize={size}
       fontFamily={fontFamily}
-      id={`${id}-${i}`}
+      id={domId}
+      ref={markerRef}
+      data-layout={visible}
     >
       <text
         x={tx}
@@ -85,16 +131,19 @@ const TextMarker = ({
       >
         {pointer}
       </text>
-      <text
-        x={labelX}
-        y={ty}
-        ref={labelRef}
-        opacity={visible ? opacity : 0}
-        textAnchor={labelAnchor}
-        data-text-marker-label={true}
-      >
-        {label}
-      </text>
+      {layouts.map((layout) => (
+        <text
+          x={metrics[layout].x}
+          y={metrics[layout].y}
+          ref={refs[layout]}
+          key={layout}
+          opacity={visible === layout ? opacity : 0}
+          textAnchor={metrics[layout].anchor}
+          data-text-marker-label={true}
+        >
+          {label}
+        </text> 
+      ))}
     </g>
   )
 }
