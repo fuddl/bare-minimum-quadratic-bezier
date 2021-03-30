@@ -39,46 +39,33 @@ const TextMarker = ({
     refs[layout] = useRef()
   }
 
-  const debuger = (expr) => {
-    if (domId === "Luyten's Star-0") {
-      //console.debug(expr)
-    }
-  }
-
   const [ visible, setVisible ] = useState(false)
 
   const checkOverlab = () => {
     const allTexts = markerRef.current.viewportElement.querySelectorAll(`[data-layout] > [data-text-marker-label]:not([opacity="0"])`)
-    debuger('checking overlab --------------------------------')
     for (let layout of layouts) {
-      debuger('tring layout ' + layout)
       let noCollision = true
       let thisBox = refs[layout].current.getBBox()
       for(let text of allTexts) {
-        if (noCollision && text.parentNode.getAttribute('id') === domId) {
-          // if we get to this point, it means there was no collision above 
-          // so we can set the current layout to visible.
-          setVisible(layout)
-          debuger('found myself')
-          return
-        }
-        let otherBox = text.getBBox()
-        debuger('other id ' + text.parentNode.getAttribute('id'))
-        if (collides(thisBox, otherBox) && text.parentNode.getAttribute('id') !== domId) {
-          debuger('collision detected with ' + text.parentNode.getAttribute('id'))
-          debuger(refs[layout].current)
-          debuger(text)
-          noCollision = false
+        if (text.parentNode.getAttribute('id') === domId) {
+          if (noCollision) {
+            // if we get to this point, it means there was no collision above 
+            // so we can set the current layout to visible.
+            setVisible(layout)
+            return
+          }
+        } else {
+          let otherBox = text.getBBox()
+          if (collides(thisBox, otherBox)) {
+            noCollision = false
+          }
         }
       }
       if (noCollision) {
-        debuger('no collision detected')
-        debuger('enabling layout ' + layout)
         setVisible(layout)
         return
       }
     }
-    debuger('no layout suitable')
     setVisible(false)
   }
 
@@ -104,12 +91,12 @@ const TextMarker = ({
     },
     north: {
       x: tx,
-      y: ty - gap,
+      y: ty - size,
       anchor: 'middle',
     },
     south: {
       x: tx,
-      y: ty + gap,
+      y: ty + size,
       anchor: 'middle',
     },
   }

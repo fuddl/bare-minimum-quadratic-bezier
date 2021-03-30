@@ -94,6 +94,22 @@ Default value: `1`
 
 Note that you'll still be able to apply css.
 
+### layout
+
+Array of possible label layouts in order of priority. Each entry myst be one of
+`'north'`, `'east'`, `'south'` or `'west'`. 
+
+Example: `['north', 'east', 'south']` would mean:
+
+1. Try to place it north.
+2. If the space in the north is already occupied, try east. 
+3. If the space in the east is occupied, try south.
+4. If the space in the south is occupied, don't show the label at all.
+
+You might want to keep this array short for better performance.
+
+Default value: `['east', 'west', 'south', 'north']`
+
 ## How to build the example
 
 ```
