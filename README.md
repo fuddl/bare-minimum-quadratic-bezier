@@ -87,8 +87,7 @@ Default value: `16`
 
 ### opacity
 
-Opacity of both the pointer and the label. Will be set to `0` for the marker
-text if space is already occupited by another text.
+Opacity of both the pointer and the label.
 
 Default value: `1`
 
