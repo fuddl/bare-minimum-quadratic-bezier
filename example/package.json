@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "get-assets": "git clone https://github.com/noirblancrouge/FuturaRenner.git src/assets/futura-renner",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",

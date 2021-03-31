@@ -1,8 +1,13 @@
+@font-face {
+	font-family: 'FuturaRenner';
+	src: url('assets/futura-renner/fonts/webfonts/FuturaRenner-Regular.woff2');
+}
+
 body {
   margin: 0;
   overflow: hidden;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Futura', 'FuturaRenner', sans-serif;
 }
 
 text {

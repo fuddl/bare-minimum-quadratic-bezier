@@ -125,7 +125,7 @@ const TextMarker = ({
           ref={refs[layout]}
           key={layout}
           opacity={opacity}
-          visibility={visible !== layout ? 'hidden' : false}
+          visibility={visible !== layout ? 'hidden' : null}
           textAnchor={metrics[layout].anchor}
           data-text-marker-label={true}
         >
