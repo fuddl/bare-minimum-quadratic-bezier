@@ -42,7 +42,7 @@ const TextMarker = ({
   const [ visible, setVisible ] = useState(false)
 
   const checkOverlab = () => {
-    const allTexts = markerRef.current.viewportElement.querySelectorAll(`[data-layout] > [data-text-marker-label]:not([opacity="0"])`)
+    const allTexts = markerRef.current.viewportElement.querySelectorAll(`[data-text-marker-label]:not([visibility="hidden"])`)
     for (let layout of layouts) {
       let noCollision = true
       let thisBox = refs[layout].current.getBBox()
@@ -124,7 +124,8 @@ const TextMarker = ({
           y={metrics[layout].y}
           ref={refs[layout]}
           key={layout}
-          opacity={visible === layout ? opacity : 0}
+          opacity={opacity}
+          visibility={visible !== layout ? 'hidden' : false}
           textAnchor={metrics[layout].anchor}
           data-text-marker-label={true}
         >
