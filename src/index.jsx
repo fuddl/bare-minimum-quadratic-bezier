@@ -23,6 +23,7 @@ const TextMarker = ({
     transforms,
     yOffset,
     layouts,
+    attributes,
   }) => {
   opacity ||= 1
   size ||= 16
@@ -109,12 +110,14 @@ const TextMarker = ({
       id={domId}
       ref={markerRef}
       data-layout={visible}
+      {...attributes}
     >
       <text
         x={tx}
         y={ty}
         textAnchor="middle"
         data-text-marker-pointer={true}
+        visibility={!visible ? 'hidden' : null}
       >
         {pointer}
       </text>
@@ -148,6 +151,7 @@ const textMarkerPlugin = {
       fontFamily,
       yOffset,
       layouts,
+      attributes,
     } = element
     return element.x.map((x, i) => (
       <TextMarker
@@ -165,6 +169,7 @@ const textMarkerPlugin = {
           transforms,
           yOffset,
           layouts,
+          attributes,
         }}
         key={`${id}-${i}`}
       />
