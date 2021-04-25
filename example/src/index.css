@@ -10,15 +10,8 @@ body {
   font-family: 'Futura', 'FuturaRenner', sans-serif;
 }
 
-text {
-  font-family: inherit;
-  stroke: black;
-  stroke-width: 2px;
-  paint-order: markers stroke fill;
-}
-
 a {
-	color: #607D8B;
+	color: deepPink;
 }
 
 .intro {

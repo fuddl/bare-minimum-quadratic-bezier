@@ -1,32 +1,39 @@
 import React, { useState } from 'react'
 import BareMinimum2d from 'bare-minimum-2d'
 import renderScene from '@mithi/bare-minimum-3d'
-import catalog from './catalog.json'
-import textMarker from 'bare-minimum-text-marker'
+import quadraticBezier from 'bare-minimum-quadratic-bezier'
 
 const sceneSettings = {
   cubeRange: 20,
   cubeZoffset: 0,
   dataXoffset: 0,
   dataYoffset: 0,
-  dataZoffset: .25,
+  dataZoffset: 0,
   paperXrange: window.innerWidth,
   paperYrange: window.innerHeight,
 }
 
 const sceneOptions = {
-  paper: false,
-  xyPlane: false,
+  paper: true,
+  xyPlane: true,
   sceneEdges: { color: "#607D8B", opacity: 1 },
-  crossLines: false,
+  crossLines: true,
 }
 
 const emptySceneOptions = {
-  paper: false,
-  xyPlane: false,
-  sceneEdges: false,
-  crossLines: false,
+  paper: { color: "#17212B", opacity: 1 },
+  xyPlane: { color: "#0652DD", opacity: 0.1 },
+  sceneEdges: { color: "#607D8B", opacity: 1 },
+  crossLines: { color: "#795548", opacity: 1 },
 }
+
+const randomArray = (len) => {
+  return Array.from({length: len}, () => Math.floor(Math.random() * 40) - 20)
+} 
+
+const randomX = randomArray(18)
+const randomY = randomArray(18)
+const randomZ = randomArray(18)
 
 function App() {
   const [zoom, setZoom] = useState(2);
@@ -49,52 +56,21 @@ function App() {
   let { data } = renderScene(
     viewSettings,
     sceneSettings,
-    sceneOptions,
-    [],
+    emptySceneOptions,
+    [{
+      opacity: 1.0,
+      color: 'deepPink',
+      size: 4,
+      type: 'polygon',
+      id: "spiral",
+      fillColor: 'transparent',
+      x: randomX,
+      y: randomY,
+      z: randomZ,
+    }],
   )
 
-  let points = [
-    data[0]
-  ]
-  for (let star of catalog) {
-    let { data } = renderScene(
-      viewSettings,
-      sceneSettings,
-      emptySceneOptions,
-      [{
-        type: 'points',
-        x: [star.location.x],
-        y: [star.location.y],
-        z: [star.location.z],
-      }],
-    )
-
-    const labelSize = 16
-    
-    let layouts = []
-    if (star.symbol === '☉') {
-      layouts = ['south']
-    } else {
-      if (data[0].x > 0) {
-        layouts = ['east', 'north', 'south', 'west']
-      } else {
-        layouts = ['west', 'south', 'north', 'east']
-      }
-    }
-
-    points.push({
-      ...data[0],
-      label: star.name,
-      id: star.name,
-      pointer: star.symbol ? star.symbol : null,
-      type: 'textMarker',
-      opacity: 1,
-      size: labelSize, 
-      yOffset: star.symbol !== '☉' ? labelSize/2.8 : labelSize/4, 
-      color: 'white',
-      layouts: layouts,
-    })
-  }
+  data[3].type = 'QuadraticBezier'
 
   return (
     <div
@@ -114,7 +90,7 @@ function App() {
         <p>
           This is a demo application of the 
           {' '}
-          <a href="https://www.npmjs.com/package/bare-minimum-text-marker">bare-minimum-text-marker</a>
+          <a href="https://www.npmjs.com/package/bare-minimum-quadratic-bezier">bare-minimum-quadratic-bezier</a>
           {' '}
           plugin for
           {' '}
@@ -129,20 +105,7 @@ function App() {
           </a>
           .
         </p>
-        <p>
-          It allows you to place a text next to a point. The component
-          makes sure that text does not overlap. 
-        </p> 
-        <p>
-          This demo visualises the stellar neigborhood of the sun (☉). 
-        </p> 
-        <p>
-          Data extracted from 
-          {' '}
-          <a href="https://www.wikidata.org/">wikidata</a>
-          {' '}
-          <small>(<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 License</a>)</small>
-        </p> 
+        <p><a href="https://fuddl.github.io/bare-bare-minimum-quadratic-bezier" onClick={(e)=> { e.preventDefault(); window.location.reload()}}>Refresh the page</a> for a new random shape.</p>
       </div>
       <BareMinimum2d
         container={{
@@ -151,12 +114,11 @@ function App() {
           xRange: 1000,
           yRange: 2000
         }}
-        data={points}
-        plugins={[textMarker]}
+        data={data}
+        plugins={[quadraticBezier]}
       />
     </div>
   )
 }
-
 
 export default App

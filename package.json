@@ -1,6 +1,6 @@
 {
-  "name": "bare-minimum-text-marker",
-  "version": "0.0.7",
+  "name": "bare-minimum-quadratic-bezir",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -14,7 +14,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "repository": "fuddl/bare-minimum-text-marker",
+  "repository": "fuddl/bare-minimum-quadratic-bezir",
   "devDependencies": {
     "microbundle": "^0.13.0"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "bare-minimum-text-marker-example",
+  "name": "bare-minimum-quadratic-bezier-example",
   "homepage": "http://fuddl.github.io/bare-minimum-text-marker",
   "version": "0.0.0",
   "private": true,
@@ -14,7 +14,7 @@
     "@juggle/resize-observer": "^3.2.0",
     "@mithi/bare-minimum-3d": "^0.1.4",
     "bare-minimum-2d": "^0.3.0",
-    "bare-minimum-text-marker": "file:..",
+    "bare-minimum-quadratic-bezier": "file:..",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
