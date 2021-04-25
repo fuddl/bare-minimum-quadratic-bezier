@@ -1,6 +1,6 @@
-# Bare minimum quadratic bezir curve
+# Bare minimum quadratic bezier curve
 
-A plugin for [bare-minimum-2d](https://www.npmjs.com/package/bare-minimum-2d) for plotting polygons as quadratic bezir curves.
+A plugin for [bare-minimum-2d](https://www.npmjs.com/package/bare-minimum-2d) for plotting polygons as quadratic bezier curves.
 
 
 

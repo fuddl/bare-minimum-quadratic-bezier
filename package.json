@@ -1,5 +1,5 @@
 {
-  "name": "bare-minimum-quadratic-bezir",
+  "name": "bare-minimum-quadratic-bezier",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -10,11 +10,13 @@
   },
   "keywords": [
     "svg",
-    "visualisation"
+    "visualisation",
+    "quadratic-bezier",
+    "bezier"
   ],
   "author": "",
   "license": "MIT",
-  "repository": "fuddl/bare-minimum-quadratic-bezir",
+  "repository": "fuddl/bare-minimum-quadratic-bezier",
   "devDependencies": {
     "microbundle": "^0.13.0"
   },
