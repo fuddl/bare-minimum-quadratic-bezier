@@ -2,7 +2,9 @@
 
 A plugin for [bare-minimum-2d](https://www.npmjs.com/package/bare-minimum-2d) for plotting polygons as quadratic bezir curves.
 
-[Demo](https://fuddl.github.io/bare-minimum-bare-minimum-quadratic-bezir/)
+
+
+[Demo](https://fuddl.github.io/bare-minimum-quadratic-bezier/)
 
 ![](./example/public/favicon.svg)
 
