@@ -1,4 +1,4 @@
-# Bare minimum text marker
+# Bare minimum quadratic bezir curve
 
 A plugin for [bare-minimum-2d](https://www.npmjs.com/package/bare-minimum-2d) for plotting polygons as quadratic bezir curves.
 
