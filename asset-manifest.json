@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/bare-minimum-quadratic-bezier/static/css/main.73579bea.chunk.css",
+    "main.js": "/bare-minimum-quadratic-bezier/static/js/main.1ffd9ff7.chunk.js",
+    "main.js.map": "/bare-minimum-quadratic-bezier/static/js/main.1ffd9ff7.chunk.js.map",
+    "runtime-main.js": "/bare-minimum-quadratic-bezier/static/js/runtime-main.a727d36e.js",
+    "runtime-main.js.map": "/bare-minimum-quadratic-bezier/static/js/runtime-main.a727d36e.js.map",
+    "static/js/2.2afa285d.chunk.js": "/bare-minimum-quadratic-bezier/static/js/2.2afa285d.chunk.js",
+    "static/js/2.2afa285d.chunk.js.map": "/bare-minimum-quadratic-bezier/static/js/2.2afa285d.chunk.js.map",
+    "index.html": "/bare-minimum-quadratic-bezier/index.html",
+    "static/css/main.73579bea.chunk.css.map": "/bare-minimum-quadratic-bezier/static/css/main.73579bea.chunk.css.map",
+    "static/js/2.2afa285d.chunk.js.LICENSE.txt": "/bare-minimum-quadratic-bezier/static/js/2.2afa285d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/bare-minimum-quadratic-bezier/static/media/FuturaRenner-Regular.5dfd4b66.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a727d36e.js",
+    "static/js/2.2afa285d.chunk.js",
+    "static/css/main.73579bea.chunk.css",
+    "static/js/main.1ffd9ff7.chunk.js"
+  ]
+}
