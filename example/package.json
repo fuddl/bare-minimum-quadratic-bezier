@@ -1,10 +1,9 @@
 {
   "name": "bare-minimum-quadratic-bezier-example",
-  "homepage": "http://fuddl.github.io/bare-minimum-text-marker",
+  "homepage": "http://fuddl.github.io/bare-minimum-quadratic-bezier",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "get-assets": "git clone https://github.com/noirblancrouge/FuturaRenner.git src/assets/futura-renner",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",

@@ -67,6 +67,9 @@ function App() {
       x: randomX,
       y: randomY,
       z: randomZ,
+      attributes: {
+        strokeLinejoin: "round",
+      }
     }],
   )
 
@@ -105,7 +108,7 @@ function App() {
           </a>
           .
         </p>
-        <p><a href="https://fuddl.github.io/bare-bare-minimum-quadratic-bezier" onClick={(e)=> { e.preventDefault(); window.location.reload()}}>Refresh the page</a> for a new random shape.</p>
+        <p><a href="https://fuddl.github.io/bare-bare-minimum-quadratic-bezier/" onClick={(e)=> { e.preventDefault(); window.location.reload()}}>Refresh the page</a> for a new random shape.</p>
       </div>
       <BareMinimum2d
         container={{
