@@ -31,9 +31,11 @@ const randomArray = (len) => {
   return Array.from({length: len}, () => Math.floor(Math.random() * 40) - 20)
 } 
 
-const randomX = randomArray(18)
-const randomY = randomArray(18)
-const randomZ = randomArray(18)
+const random = {
+  x: randomArray(18),
+  y: randomArray(18),
+  z: randomArray(18),
+} 
 
 function App() {
   const [zoom, setZoom] = useState(2);
@@ -57,20 +59,22 @@ function App() {
     viewSettings,
     sceneSettings,
     emptySceneOptions,
-    [{
-      opacity: 1.0,
-      color: 'deepPink',
-      size: 4,
-      type: 'polygon',
-      id: "spiral",
-      fillColor: 'transparent',
-      x: randomX,
-      y: randomY,
-      z: randomZ,
-      attributes: {
-        strokeLinejoin: "round",
-      }
-    }],
+    [
+      {
+        opacity: 1.0,
+        color: 'deepPink',
+        size: 4,
+        type: 'polygon',
+        id: "random",
+        fillColor: 'transparent',
+        x: random.x,
+        y: random.y,
+        z: random.z,
+        attributes: {
+          strokeLinejoin: "round",
+        }
+      },
+    ],
   )
 
   data[3].type = 'QuadraticBezier'

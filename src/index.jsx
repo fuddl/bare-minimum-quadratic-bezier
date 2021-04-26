@@ -18,10 +18,19 @@ const QuadraticBezier = {
       if (i % 2 == 0) {
         return `${currentX},${currentY}`
       } else {
-        return `Q ${currentX},${currentY}`
+        return `S ${currentX},${currentY}`
       }
     }).join(' ')
-    return <path d={points} stroke={color} fill="transparent" strokeWidth={size} {...attributes} />
+    return (
+      <path
+        d={points}
+        key={id}
+        stroke={color}
+        fill="transparent"
+        strokeWidth={size}
+        {...attributes}
+      />
+    )
   }
 }
 
