@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bare-minimum-quadratic-bezier/static/css/main.73579bea.chunk.css",
-    "main.js": "/bare-minimum-quadratic-bezier/static/js/main.b4262163.chunk.js",
-    "main.js.map": "/bare-minimum-quadratic-bezier/static/js/main.b4262163.chunk.js.map",
+    "main.js": "/bare-minimum-quadratic-bezier/static/js/main.427866bd.chunk.js",
+    "main.js.map": "/bare-minimum-quadratic-bezier/static/js/main.427866bd.chunk.js.map",
     "runtime-main.js": "/bare-minimum-quadratic-bezier/static/js/runtime-main.a727d36e.js",
     "runtime-main.js.map": "/bare-minimum-quadratic-bezier/static/js/runtime-main.a727d36e.js.map",
     "static/js/2.2afa285d.chunk.js": "/bare-minimum-quadratic-bezier/static/js/2.2afa285d.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.a727d36e.js",
     "static/js/2.2afa285d.chunk.js",
     "static/css/main.73579bea.chunk.css",
-    "static/js/main.b4262163.chunk.js"
+    "static/js/main.427866bd.chunk.js"
   ]
 }
